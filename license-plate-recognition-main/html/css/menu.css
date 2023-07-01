@@ -1,0 +1,27 @@
+        body{
+            background: rgb(39, 0, 75);
+            text-align: center;
+        }
+        .box{
+            
+            border-radius: 25px;
+            background-color:rgb(49, 49, 49);
+            padding: 15px;
+            margin: 1% 41% 41%;
+            font-size: 35px;
+        }
+        a{
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            border: 3px solid rgb(0, 0, 0);
+            border-radius: 15px;
+            padding: 5px;
+        }
+        h2{
+            font-size: 60px;
+            color: rgb(255, 255, 255);
+            text-shadow: 10px 20px 20px black;    
+        }
+         a:hover{
+            background-color: black;
+        }
