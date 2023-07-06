@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatorio</title>
+</head>
+<body>
+    <br>
+    <div>
+    <h2>Security Vision</h2>
+    </div>
+    <div>
+            <p>{{ r }}</p>  <!-- Usar a variável 'r' em vez de 'rel' -->
+    </div>
+    <br>
+    <div class="box">
+        <form action="buscar_registro" id="buscar_registro" method="post" autocomplete="off">
+                <p>Qual registro você gostaria de pesquisar?</p>
+
+                <label id="cad_placa" for="placa">Placa:</label>
+                <input type="text" name="placa" id="placa"  required placeholder="Digite a placa do veiculo" required /><br><br>
+
+                <button type="submit" name = "Buscar" id="Buscar">Buscar</button>
+                <br>
+                <input type="submit" value="Voltar" name="click"/>
+        </form>
+    </div>
+    
+</body>
+</html>
