@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: purple;
+            font-size: 24px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <hr>
+    <h1>Security Vision</h1>
+    <hr>
+    <br>
+
+    <h2>{{ reg }}</h2>
+    <br>
+    <form method="post" action="{{ url_for('tasks') }}">
+        <input type="submit" value="Voltar" name="click"/>
+    </form>
+
+</body>
+
+</html>
