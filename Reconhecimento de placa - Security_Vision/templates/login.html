@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .form-control {
+            background-color: black;
+            border-color: purple;
+            color: white;
+            width: 200px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            background-color: purple;
+            border-color: purple;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .h2-custom {
+            margin-top: 4%;
+            margin-bottom: 35%;
+            font-size: 50px;
+            COLOR: purple;
+
+            
+        }
+
+        form input[type="text"],
+        form input[type="password"] {
+            background-color: black;
+            color: white;
+            border: 1px solid purple;
+            padding: 5px;
+            width: 200px;
+        }
+
+        form input[type="text"]:focus,
+        form input[type="password"]:focus {
+            outline: none;
+            box-shadow: 0 0 5px purple;
+        }
+        label{
+            margin-right: 45%;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h2 class="h2-custom">Security Vision</h2>
+            <form action="login" id="login" method="post">
+                <div class="form-group">
+                    <label for="nome">Usuário</label><br>
+                    <input type="text" class="form-control" name="nome" id="nome" required placeholder="Digite seu email">
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha</label><br>
+                    <input type="password" class="form-control" name="senha" id="senha" required placeholder="Digite sua senha">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

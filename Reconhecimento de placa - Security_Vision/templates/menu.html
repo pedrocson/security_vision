@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .box {
+            background: linear-gradient(to right, purple, black);
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .box button[type="submit"] {
+            background-color: purple;
+            border-color: purple;
+            margin-top: 10px;
+            color: white;
+        }
+
+        .box button[type="submit"]:hover {
+            background-color: white;
+            border-color: purple;
+            color: purple;
+        }
+
+        .box button[type="submit"] + br {
+            display: none;
+        }
+
+        .box button[type="submit"] + br + button[type="submit"] {
+            margin-top: 20px;
+        }
+
+        .title {
+            margin-top: 35px;
+            margin-bottom: 65px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="title">
+                    <h2>Security Vision</h2>
+                </div>
+                <div class="box">
+                    <form method="post" action="{{ url_for('tasks') }}">
+                        <button type="submit" value="Registar" name="click" class="btn btn-primary btn-block">Cadastrar Moradores</button>
+                        <br>
+                        <button type="submit" value="Deletar" name="click" class="btn btn-primary btn-block">Deletar Cadastro</button>
+                        <br>
+                        <button type="submit" value="Captura" name="click" class="btn btn-primary btn-block">Realizar Captura</button>
+                        <br>
+                        <button type="submit" value="Relatório" name="click" class="btn btn-primary btn-block">Relatório de acessos</button>
+                        <br>
+                        <button type="submit" value="Sair" name="click" class="btn btn-primary btn-block">Sair</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

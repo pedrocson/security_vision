@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: purple;
+            font-size: 34px;
+        }
+
+        h2 {
+            color: white;
+            font-size: 34px;
+        }
+
+        .btn-primary {
+            background-color: purple;
+            border-color: purple;
+        }
+
+        .btn-primary:hover {
+            background-color: white;
+            border-color: purple;
+            color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <hr>
+    <h1>Security Vision</h1>
+    <hr>
+    <br>
+    <h2>{{ reg }}</h2>
+    <br>
+    <form method="post" action="{{ url_for('tasks') }}">
+        <input type="submit" value="Voltar" name="click" class="btn btn-primary">
+    </form>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

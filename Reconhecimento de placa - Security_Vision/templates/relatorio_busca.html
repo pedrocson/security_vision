@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatorio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            padding-top: 30px;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            font-size: 50px;
+            text-align: center;
+            
+        }
+
+        .table-dark {
+            margin-top: 7%;
+            background-color: #343a40;
+        }
+
+        th,
+        td {
+            color: white;
+            padding: 10px;
+        }
+
+        .box {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .title {
+            margin-top: 35px;
+            margin-bottom: 65px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <div class="title">
+        <h2>Security Vision</h2>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>Placa</th>
+                    <th>Registros</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in rel %}
+                <tr>
+                    {% set items = r.split(' - ') %}
+                    {% for item in items %}
+                    <td>{{ item }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h2>{{ nao }}</h2>
+    </div>
+    <br>
+    <div class="box">
+        <form action="voltar_relatorio" id="voltar_relatorio" method="post" autocomplete="off">
+            <button type="submit" class="btn btn-primary mx-auto d-block" value="Voltar" name="click">Voltar</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

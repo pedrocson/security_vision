@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capturar</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+
+        body {
+            background-color: black;
+            color: white;
+            padding-top: 30px;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: purple;
+            text-align: center;
+            margin-top: -30px;
+        }
+
+        h4 {
+            color: white;
+            text-align: center;
+        }
+
+        h5 {
+            color: purple;
+            text-align: center;
+        }
+
+        .col-lg-6, p {
+            margin-top: 5%;
+            font-size: 14px;
+            color: white;
+            background-color: light-black;
+        }
+
+        .row {
+            align-items: center;
+        }
+
+        .col-lg-6 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        img {
+            margin-top: 20px;
+            max-height: 65%;
+            width: 60%;
+        }
+
+        input[type="submit"] {
+            background-color: purple;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #800080;
+            cursor: pointer;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div>
+                    <h2 class="mt-5">Security Vision</h2>
+                </div>
+                <img src="{{ url_for('video_feed') }}" alt="Video Feed">
+                <br>
+                <form method="post" action="{{ url_for('tasks') }}">
+                    <button type="submit" class="btn btn-primary" value="Capturar" name="click">Capturar</button>
+                </form>
+                <form method="post" action="{{ url_for('tasks') }}">
+                    <input type="submit" class="btn btn-primary" value="Voltar" name="click"/>
+                </form>
+            </div>
+            <div class="col-lg-6">
+                <p>Instruções:<br>
+                Posicione a câmera e clique em capturar para realizar uma leitura de placa.<br><br>
+                Verifique o código lido pelo sistema. Se o mesmo estiver errado, reposicione a câmera e realize uma nova captura.<br>
+                Se o código da placa for encontrado no banco, um registro de entrada / saída será feito.</p><br>
+                <h4>{{ error_message }}</h4>
+                <h4>{{ texto }}</h4>
+                <h5>{{ auth }}</h5>
+                <h6>{{ confirmation|safe }}</h6>
+                <p>{{ report2|safe }}</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

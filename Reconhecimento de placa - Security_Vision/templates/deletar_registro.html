@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+
+        .box input[type="text"] {
+            background-color: black;
+            color: white;
+            border: 1px solid purple;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        .box input[type="submit"] {
+            background-color: purple;
+            border-color: purple;
+            margin-top: 10px;
+            color: white;
+        }
+
+        input.placa {
+            width: 400px;
+        }
+
+        .box input[type="submit"]:hover {
+            background-color: white;
+            border-color: purple;
+            color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <div class="container">
+        <h2>Security Vision</h2>
+        <br>
+        <div class="table-responsive">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>Placa</th>
+                        <th>Nome</th>
+                        <th>Apartamento</th>
+                        <th>Registros</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for placa in placas %}
+                    <tr>
+                        {% set items = placa.split(' - ') %}
+                        {% for item in items %}
+                        <td>{{ item }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <div class="box">
+            <form action="deletar_registro" id="deletar_registro" method="post" autocomplete="off">
+                <input type="text" name="placa" id="placa" class="form-control placa" placeholder="Digite a placa do cadastro que você deseja deletar." required />
+                <br>
+                <button type="submit" name="Confirmar" id="Confirmar" class="btn btn-primary">Confirmar</button>
+            </form>
+            <form method="post" action="{{ url_for('tasks') }}">
+                <input type="submit" value="Voltar" name="click" class="btn btn-primary" />
+            </form>
+        </div>
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

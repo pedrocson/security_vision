@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatorio</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            padding-top: 50px;
+            font-family: Arial, sans-serif;
+        }
+
+        .title {
+            margin-top: 35px;
+            margin-bottom: 65px;
+            text-align: center;
+        }
+
+        .box {
+            margin-top: 50px;
+        }
+
+        label {
+            color: purple;
+        }
+
+        .box input[type="submit"] {
+            background-color: purple;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .box input[type="text"] {
+            background-color: black;
+            color: white;
+            border: 1px;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #800080;
+            cursor: pointer;
+        }
+
+        table {
+            margin-top: 10px;
+            color: white;
+        }
+
+        th {
+            background-color: dark-gray;
+        }
+
+        td {
+            background-color: dark-gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+            <h2>Security Vision</h2>
+
+        <div class="box">
+            <form action="buscar_registro" id="buscar_registro" method="post" autocomplete="off">
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="placa" id="placa" required placeholder="Digite uma placa para buscar um registro de acesso.">
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary" name="Buscar" id="Buscar">Buscar</button>
+            </form>
+            <form method="post" action="{{ url_for('tasks') }}">
+                <input type="submit" class="btn btn-primary" value="Voltar" name="click"/>
+            </form>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>Placa</th>
+                    <th>Registros</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in rel %}
+                <tr>
+                    {% set items = r.split(' - ') %}
+                    {% for item in items %}
+                    <td>{{ item }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

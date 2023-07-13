@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        h1 {
+            color: white;
+        }
+
+
+        form {
+            margin-top: 20px;
+        }
+
+        form label {
+            color: white;
+        }
+
+        form input[type="text"],
+        form input[type="password"] {
+            background-color: black;
+            color: white;
+            border: 1px solid purple;
+            padding: 5px;
+            width: 200px;
+        }
+
+        form input[type="text"]:focus,
+        form input[type="password"]:focus {
+            outline: none;
+            box-shadow: 0 0 5px purple;
+        }
+
+        form input[type="submit"] {
+            background-color: purple;
+            border-color: purple;
+            color: white;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: white;
+            border-color: purple;
+            color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <hr>
+        <h1>Security Vision</h1>
+        <hr>
+        <form action="cadastro" id="cadastro" method="post" autocomplete="off">
+            <label id="cad_nome" for="nome">Nome:</label><br>
+            <input type="text" name="nome" id="nome" maxlength="100" required placeholder="Digite o nome do morador"
+                autofocus /> <br><br>
+
+            <label id="cad_apto" for="apto">Apto:</label><br>
+            <input type="text" name="apto" id="apto" required placeholder="Digite o apartamento" /><br><br>
+
+            <label id="cad_placa" for="placa">Placa:</label><br>
+            <input type="text" name="placa" id="placa" required placeholder="Digite a placa do veiculo" /><br><br>
+
+            <button type="submit" name="cad" id="cad" class="btn btn-primary">Cadastrar</button>
+        </form>
+        <form method="post" action="{{ url_for('tasks') }}">
+            <input type="submit" value="Voltar" name="click" class="btn btn-primary">
+        </form>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
