@@ -1,17 +1,26 @@
-# Camera_Flask_App
-Aplicativo de câmera usando flask, OpenCV, no qual podemos clicar em fotos, gravar vídeos, aplicar filtros como filtro de snapchat em escala de cinza, negativo e 'somente rosto'.
+
 
 ## Procedimento para executar o aplicativo:
 
---Para executar este aplicativo, você deve ter python, flask e OpenCV instalados em seu PC.
+--Para executar este aplicativo, você deve ter python, flask, OpenCV, Thread, pytesseract, os, e firebase instalados.
+execute um comando pip para faz a instalação de cada um deles.
 
---Para iniciar o aplicativo, clone este repositório e vá para o diretório do projeto no prompt de comando.
-Tipo:
-python camera_flask_app.py
+pip install opencv-python
+pip install flask
+pip install pytesseract
+pip install firebase-admin
+pip install os
+pip install Thread
 
---Agora, copie e cole http://127.0.0.1:5000/ em seu navegador de internet favorito e pronto.
+#Modificar os diretórios de acordo com o seu computador:
+path_pytesseract = r"C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
+cred = credentials.Certificate(r"C:\Users\Pedro\Desktop\TCC2\license-plate-recognition-main\src\json_firebase.json")
+directory = r"C:\Users\Pedro\Desktop\teste\Reconhecimento de placa - Security_Vision\shots"
 
---Por favor, leia minha postagem no blog médio para obter uma explicação detalhada: [Camera App with Flask and OpenCV](https://naghemanth.medium.com/camera-app-with-flask-and-opencv-bd147f6c0eec?source=friends_link&sk=705255bd58cf139ad95ab2149806d8c6 ).
 
-## Demonstração:
-![texto alternativo](saved_model/demo.gif)
+
+--Para inciar a aplicação, execute o código e depois pressione a tecla ctrl e clique em cima do link http://127.0.0.1:5000/ que irá aparecer no terminal python;
+Ou então copie e cole http://127.0.0.1:5000/ em seu navegador de internet favorito e pronto.
+
+--Por favor, leia minha postagem no medium para obter uma explicação detalhada: https://medium.com/@pedro.motta124/security-vision-sistema-web-para-controlar-o-acesso-de-ve%C3%ADculos-em-condom%C3%ADnios-88ab7efb6910
+
