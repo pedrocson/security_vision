@@ -3,7 +3,10 @@
 ## Procedimento para executar o aplicativo:
 
 --Para executar este aplicativo, você deve ter python, flask, OpenCV, Thread, pytesseract, os, e firebase instalados.
-execute um comando pip para faz a instalação de cada um deles.
+Para instalar a biblioteca pytesseract você precisa intalar o programa Thesseract-OCR, disponível em: https://github.com/tesseract-ocr/tessdoc.
+
+
+Em seguida, execute um comando pip para fazer a instalação de cada uma das bibliotecas:
 
 pip install opencv-python;
 pip install flask;
