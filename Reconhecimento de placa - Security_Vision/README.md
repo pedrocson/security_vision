@@ -5,12 +5,12 @@
 --Para executar este aplicativo, você deve ter python, flask, OpenCV, Thread, pytesseract, os, e firebase instalados.
 execute um comando pip para faz a instalação de cada um deles.
 
-pip install opencv-python
-pip install flask
-pip install pytesseract
-pip install firebase-admin
-pip install os
-pip install Thread
+pip install opencv-python;
+pip install flask;
+pip install pytesseract;
+pip install firebase-admin;
+pip install os;
+pip install Thread;
 
 #Modificar os diretórios de acordo com o seu computador:
 path_pytesseract = r"C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
