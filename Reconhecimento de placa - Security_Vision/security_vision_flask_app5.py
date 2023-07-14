@@ -16,7 +16,7 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 
 #Modificar diretório de acordo com o seu computador:
-cred = credentials.Certificate(r"C:\Users\Pedro\Desktop\TCC2\license-plate-recognition-main\src\json_firebase.json")
+cred = credentials.Certificate(r"C:\Users\Pedro\Desktop\Apresentacao TCC2\json_firebase.json")
 app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -57,10 +57,10 @@ app = Flask(__name__, template_folder='./templates')
 def hist_ref(plates_numbers):
     db_ = db.collection(u'historico_ref').document(plates_numbers)
     
-    acessos_ = db_.get({u'acessos'})
-    entrada_ = db_.get({u'entrada'})
-    saida_ = db_.get({u'saida'})
-    novaentrada_ = db_.get({u'nova_entrada'})
+    acessos_ = db_.get({u'Acessos'})
+    entrada_ = db_.get({u'Entrada'})
+    saida_ = db_.get({u'Saida'})
+    novaentrada_ = db_.get({u'Nova_entrada'})
  
 
     if acessos_.exists:
@@ -166,7 +166,7 @@ def historico():
 
 
 def historico2():
-    plates_report = db.collection(u'historico_ref').order_by(u'entrada').get()
+    plates_report = db.collection(u'historico_ref').order_by(u'Entrada').get()
     plates = []
     
     for doc in plates_report:
@@ -195,10 +195,10 @@ def registrar_entrada_saida(plates_numbers):
     db_ = db.collection(u'historico_ref').document(plates_numbers)
     #db_a = db.collection(u'historico_ref').document(u'CSC-2013').get({u'acessos'})
     
-    acessos_ = db_.get({u'acessos'})
-    entrada_ = db_.get({u'entrada'})
-    saida_ = db_.get({u'saida'})
-    novaentrada_ = db_.get({u'nova_entrada'})
+    acessos_ = db_.get({u'Acessos'})
+    entrada_ = db_.get({u'Entrada'})
+    saida_ = db_.get({u'Saida'})
+    novaentrada_ = db_.get({u'Nova_entrada'})
 
 
     if acessos_.exists:
@@ -206,7 +206,7 @@ def registrar_entrada_saida(plates_numbers):
         for value in acs.values():
             acs = value
     else: 
-        db_.set({u'acessos': 0})
+        db_.set({u'Acessos': 0})
         acs = 0
 
     if entrada_.exists:
@@ -230,10 +230,10 @@ def registrar_entrada_saida(plates_numbers):
     if ent == 'null':
         reg_acesso = int(acs)+1
         registro_entrada = {
-            'entrada': firestore.SERVER_TIMESTAMP,
-            'saida': 'null',
-            'nova_entrada': 'null',
-            'acessos': reg_acesso
+            'Entrada': firestore.SERVER_TIMESTAMP,
+            'Saida': 'null',
+            'Nova_entrada': 'null',
+            'Acessos': reg_acesso
         }
         
         db_.update(registro_entrada)
@@ -246,7 +246,7 @@ def registrar_entrada_saida(plates_numbers):
     
     elif sai == 'null':
         registro_saida = {
-            'saida': firestore.SERVER_TIMESTAMP
+            'Saida': firestore.SERVER_TIMESTAMP
         }
         db_.update(registro_saida)
         confirmation = 'Saída registrada com sucesso!'
@@ -259,8 +259,8 @@ def registrar_entrada_saida(plates_numbers):
     elif nen == 'null':
         reg_acesso = int(acs)+1
         registro_nova_entrada = {
-            'nova_entrada': firestore.SERVER_TIMESTAMP,
-            'acessos': reg_acesso
+            'Nova_entrada': firestore.SERVER_TIMESTAMP,
+            'Acessos': reg_acesso
         }
         db_.update(registro_nova_entrada)
         print()
@@ -273,9 +273,9 @@ def registrar_entrada_saida(plates_numbers):
     
     else: 
         novo_registro = {
-        'entrada': nen,
-        'saida': firestore.SERVER_TIMESTAMP,
-        'nova_entrada': 'null',
+        'Entrada': nen,
+        'Saida': firestore.SERVER_TIMESTAMP,
+        'Nova_entrada': 'null',
         }
         db_.update(novo_registro)
         confirmation = 'Saída registrada com sucesso! Um novo registro foi iniciado.'
@@ -366,7 +366,7 @@ def scan_plate(image):
 
 def retornar_texto():
     #Modificar diretório de acordo com o seu computador:
-    directory = r"C:\Users\Pedro\Desktop\teste\Reconhecimento de placa - Security_Vision\shots"
+    directory = r"C:\Users\Pedro\Desktop\Apresentacao TCC2\shots"
     filenames_ = next(os.walk(directory))[2]
     images = [os.path.join(directory, filename) for filename in filenames_]
     plates = []
